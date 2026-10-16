@@ -1,0 +1,10 @@
+speed_lookahead_s,curvature_factor,status,segment_time_s,entry_speed_mps,max_lateral_error_m,min_boundary_clearance_m,min_l1_m,max_l1_m
+0.2,0.176,boundary_crossed,0.44,2.875,0.276,-0.011,1.2,2.784
+0.2,0.22,boundary_crossed,0.44,2.875,0.271,-0.005,1.2,2.778
+0.2,0.264,boundary_crossed,0.44,2.875,0.266,-0.001,1.2,2.771
+0.25,0.176,boundary_crossed,0.44,2.875,0.273,-0.007,1.2,2.784
+0.25,0.22,boundary_crossed,0.44,2.875,0.268,-0.002,1.2,2.778
+0.25,0.264,boundary_crossed,0.46,2.875,0.274,-0.009,1.2,2.771
+0.3,0.176,boundary_crossed,0.44,2.875,0.271,-0.006,1.2,2.784
+0.3,0.22,boundary_crossed,0.44,2.875,0.266,-0.001,1.2,2.778
+0.3,0.264,boundary_crossed,0.46,2.875,0.272,-0.007,1.2,2.771

@@ -1,0 +1,63 @@
+controller_manager:
+  ros__parameters:
+    t_clip_min: 1.2 #0.7->1.0->1.2->1.4
+    t_clip_max: 8.0 #8.0
+    m_l1: 0.67 #0.47 -> 0.67 -> 0.8
+    q_l1: 0.0 # -0.2
+    speed_lookahead: 0.25
+    lat_err_coeff: 1.0
+    acc_scaler_for_steer: 1.0
+    dec_scaler_for_steer: 1.0
+    start_scale_speed: 6.5
+    end_scale_speed: 10.0
+    downscale_factor: 0.5
+    speed_lookahead_for_steer: 0.0
+    trailing_gap: 2.5
+    trailing_vel_gain: 0.25
+    trailing_p_gain: 1.35
+    trailing_i_gain: 0.0
+    trailing_d_gain: 1.0
+    blind_trailing_speed: 1.5
+    static_target_hold_sec: 0.4
+    static_min_standoff_m: 0.50   # hard stop distance to a static obstacle [m]
+    static_resume_hysteresis_m: 0.15
+    static_crawl_speed_mps: 0.20  # floor speed while approaching a static obstacle [m/s]
+    curvature_factor: 0.22 #0.145 ->0.153->0.17 -> 0.25 -> 0.22
+    speed_factor_for_lat_err: 1.0
+    speed_factor_for_curvature: 1.0
+    KP: 0.8
+    KI: 0.0
+    KD: 0.03 #0.05
+    heading_error_thres: 10.0
+    steer_gain_for_speed: 1.0
+    future_constant: 0.05
+    AEB_thres: 0.5
+    speed_diff_thres: 0.1
+    start_speed: 10.0 # 초기값 10.0 , 0.5
+    start_curvature_factor: 1.5
+    # FTG (FTGONLY state) - disparity-extender; all tunables in metres/degrees,
+    # live-tunable via rqt. Beam/FOV independent (no beam-count params).
+    ftg_debug: true
+    ftg_max_lidar_dist: 4.0      # NaN / no-return beams clipped to this [m]
+    ftg_max_speed: 2.0           # top speed; speed schedule scales off this [m/s]
+    ftg_track_width: 2.0         # returns closer than half this are ignored [m]
+    ftg_front_fov_deg: 80.0      # TOTAL front field of view considered [deg] (+-45)
+    ftg_smooth_deg: 1.0          # scan smoothing window width [deg]
+    ftg_disp_thresh: 0.5         # range jump that counts as a discontinuity [m]
+    ftg_bubble_m: 0.3            # safety bubble blown at each disparity [m]
+    ftg_steer_ema: 0.0           # steering low-pass 0..1 (0=off, higher=smoother)
+    ftg_max_steer: 0.4           # steering command clip [rad]
+
+    # [Hz] state_machine이 /local_waypoints를 내보내는 실제 주기.
+    #
+    # 이 값은 컨트롤러의 워치독 계산에만 쓰인다 (controller_manager.py):
+    #   waypoint_safety_counter >= loop_rate/state_machine_rate * 10
+    # 즉 50/50*10 = 10 사이클 = 200 ms 동안 새 /local_waypoints가 없으면
+    # speed=0으로 하드 스톱한다.
+    #
+    # 여기 없으면 코드 기본값 40이 쓰인다. 실제 rate가 80이던 동안 이 기본값
+    # 40이 그대로 적용돼 임계가 의도의 2배(250 ms)로 늘어나 있었다.
+    # state_machine_params.yaml의 `rate`와 반드시 같은 값으로 유지할 것.
+    state_machine_rate: 50
+
+    save_params: false

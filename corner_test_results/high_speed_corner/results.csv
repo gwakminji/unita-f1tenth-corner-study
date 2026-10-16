@@ -1,0 +1,10 @@
+speed_lookahead_s,curvature_factor,status,segment_time_s,entry_speed_mps,max_lateral_error_m,min_boundary_clearance_m,min_l1_m,max_l1_m
+0.2,0.176,completed,1.64,1.94,0.306,0.077,1.2,2.232
+0.2,0.22,completed,1.64,1.94,0.306,0.077,1.2,2.228
+0.2,0.264,completed,1.64,1.94,0.304,0.078,1.2,2.223
+0.25,0.176,completed,1.66,1.94,0.298,0.064,1.2,2.232
+0.25,0.22,completed,1.66,1.94,0.298,0.064,1.2,2.228
+0.25,0.264,completed,1.66,1.94,0.298,0.064,1.2,2.223
+0.3,0.176,completed,1.68,1.836,0.295,0.067,1.2,2.232
+0.3,0.22,completed,1.68,1.836,0.295,0.067,1.2,2.228
+0.3,0.264,completed,1.68,1.836,0.295,0.067,1.2,2.223

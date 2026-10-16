@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+*.zip
+
+# 노션 업로드용 사본 (원본은 저장소 루트에 있음)
+노션_과제_제출물/
+
+# 동아리 racing_stack 저장소 전체. 시뮬레이션에 필요한 파일은 track_data/에 복사해 둠
+racing_stack/
