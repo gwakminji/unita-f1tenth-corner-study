@@ -3,7 +3,13 @@
 동아리 과제 2번 **"고속 코너에서 차량이 트랙 바깥으로 밀림"**에 대한 파라미터 비교 기록이다.
 `speed_lookahead`와 `curvature_factor`를 바꿔 가며 `test1` 트랙의 코너(웨이포인트 365~400)를 비교용 시뮬레이션으로 주행시켰다.
 
-![주행 비교](corner_test_results/corner_comparison.gif)
+**GIF 1 – 같은 속도(0.8배), `speed_lookahead`만 다르게:** 현재 설정 ⑤번 vs 가장 빨랐던 ②번
+
+![speed_lookahead 비교](corner_test_results/corner_comparison_lookahead.gif)
+
+**GIF 2 – 같은 설정(⑤번), 진입 속도만 다르게:** 0.8배 vs 원래 속도 1.0배
+
+![진입 속도 비교](corner_test_results/corner_comparison_speed.gif)
 
 ## 구성
 
@@ -21,5 +27,7 @@
 ```bash
 pip install numpy pillow
 python corner_parameter_test.py --speed-scale 0.8
-python make_corner_gif.py
+python corner_parameter_test.py --speed-scale 0.9 --output corner_test_results/speed_0_9
+python corner_parameter_test.py --speed-scale 1.0 --output corner_test_results/speed_1_0
+python make_corner_gif.py   # GIF 1, GIF 2 생성
 ```
